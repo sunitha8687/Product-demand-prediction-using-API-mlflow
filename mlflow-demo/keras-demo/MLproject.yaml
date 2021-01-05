@@ -1,0 +1,11 @@
+name: keras-demo
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      max_depth: int
+      max_leaf_nodes: {dropout: float, default: 0.2}
+      model_name: {type: string, default: "keras-classification" }
+      run_origin: {type: string, default: "default" }
+    command: "python model_run.py -r {dropout} {model_name}"
